@@ -11,7 +11,8 @@ export  namespace TodoStore {
 
     export interface State {
         todoData: any,
-        newItemData: string
+        filteredData:any,
+        searchRequest: string
     }
 
     class S extends Store {
@@ -27,9 +28,9 @@ export  namespace TodoStore {
                     title: 'Second',
                     ended: false
                 },
-
             ],
-            newItemData: ''
+            filteredData: [],
+            searchRequest : ''
         };
 
         public getState():any {
@@ -66,12 +67,22 @@ export  namespace TodoStore {
                 }
                 case 'CHANGE_STATUS' :
                 {
-                    this.state.todoData = this.state.todoData.map((todo:Todo) => {
-                        if(todo.id == payload.id){
+                    this.state.todoData.map((todo:Todo) => {
+                        if (todo.id == payload.id) {
                             todo.ended = !todo.ended;
                         }
+                    });
 
-                        return todo;
+                    break;
+                }
+                case 'SEARCH_ITEMS' :
+                {
+                    this.state.searchRequest = payload.text;
+                    this.state.filteredData = this.state.todoData.filter((todo:Todo) => {
+                        if (todo.title.toLowerCase().indexOf(payload.text.toLowerCase()) >= 0) {
+                            return true;
+                        }
+                        return false;
                     });
 
                     break;

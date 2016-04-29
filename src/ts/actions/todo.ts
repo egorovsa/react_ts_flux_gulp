@@ -14,7 +14,6 @@ class Actions {
         });
     }
 
-
     public  appendItem(title:string):void {
         AppDispatcher.dispatch({
             actionType: 'NEW_ITEM',
@@ -23,10 +22,16 @@ class Actions {
     }
 
     public changeStatus(id:number):void {
-        console.log('ddd')
         AppDispatcher.dispatch({
             actionType: 'CHANGE_STATUS',
             id: id
+        })
+    }
+
+    public searchItems(text:string):void{
+        AppDispatcher.dispatch({
+            actionType:'SEARCH_ITEMS',
+            text: text
         })
     }
 

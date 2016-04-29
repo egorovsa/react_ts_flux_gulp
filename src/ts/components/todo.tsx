@@ -26,14 +26,14 @@ class C extends React.Component<Props, State> {
         }
     }
 
-
     public render() {
+        let todoData = this.state.todoStore.searchRequest.length > 0 ? this.state.todoStore.filteredData : this.state.todoStore.todoData;
         return <div className="todoMain">
                 <h2>ToDo (React + TypeScript + Flux + Gulp)</h2>
                 <SearchInput/>
                 <br/>
                 <ul className="list-group">
-                    {this.state.todoStore.todoData.map((item:TodoStore.Todo, i) => <TodoItem key={i} item={item} id={item.id} title={item.title}/>)}
+                    {todoData.map((item:TodoStore.Todo, i) => <TodoItem key={i} item={item} id={item.id} title={item.title}/>)}
                 </ul>
 
         </div>;

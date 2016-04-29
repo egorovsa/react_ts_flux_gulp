@@ -34,10 +34,14 @@ class SI extends React.Component<Props, State> {
         this.newItem = e.target.value;
     }
 
+    private handleSearchChange(e):void{
+        TodoActions.searchItems(e.target.value);
+    }
+
     public render() {
         return <div className="row">
             <div className="col-lg-6">
-                <input type="text" className="form-control" placeholder="Search for..."/>
+                <input type="text" className="form-control" placeholder="Search for..." onChange={this.handleSearchChange.bind(this)}/>
             </div>
             <div className="col-lg-6">
                 <div className="input-group">

@@ -20,18 +20,20 @@ export class TodoItem extends React.Component<Props, State> {
     }
 
     private itemStatusClass():string {
-        return this.props.item.ended?'ended':'';
+        return this.props.item.ended ? 'ended' : '';
     }
 
-    private changeStatus():void{
+    private changeStatus():void {
         TodoActions.changeStatus(this.props.id);
     }
 
     public render() {
+        console.log(this.props.item);
         return <li className="list-group-item">
             <div className="row">
                 <div className="col-sm-12 todoItem">
-                    <span className={this.itemStatusClass()} onClick={this.changeStatus.bind(this)}>{this.props.title}</span>
+                    <span className={this.itemStatusClass()}
+                          onClick={this.changeStatus.bind(this)}>{this.props.title}</span>
                     <button className="btn btn-danger navbar-right" onClick={this.deleteItem.bind(this)}>Удалить
                     </button>
                 </div>
