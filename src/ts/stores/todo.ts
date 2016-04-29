@@ -28,6 +28,16 @@ export  namespace TodoStore {
                     title: 'Second',
                     ended: false
                 },
+                {
+                    id: 3,
+                    title: 'Foo',
+                    ended: true
+                },
+                {
+                    id: 4,
+                    title: 'Bar',
+                    ended: true
+                },
             ],
             filteredData: [],
             searchRequest : ''
@@ -38,8 +48,6 @@ export  namespace TodoStore {
         }
 
         public __onDispatch(payload:any):void {
-            console.log(payload);
-
             switch (payload.actionType) {
                 case 'DELETE' :
                 {
