@@ -28,7 +28,6 @@ export class TodoItem extends React.Component<Props, State> {
     }
 
     public render() {
-        console.log(this.props.item);
         return <li className="list-group-item">
             <div className="row">
                 <div className="col-sm-12 todoItem">

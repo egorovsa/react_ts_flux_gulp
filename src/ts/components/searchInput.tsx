@@ -4,15 +4,18 @@ import {TodoStore} from '../stores/todo';
 import {TodoActions} from '../actions/todo';
 
 interface Props {
-
+    searchUpdate: any
 }
 
 interface State {
-
+    searchInput:string
 }
 
 class SI extends React.Component<Props, State> {
+
     private newItem:string = '';
+
+
 
     static getStores() {
         return [
@@ -35,7 +38,7 @@ class SI extends React.Component<Props, State> {
     }
 
     private handleSearchChange(e):void{
-        TodoActions.searchItems(e.target.value);
+        this.props.searchUpdate(e.target.value);
     }
 
     public render() {

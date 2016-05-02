@@ -83,18 +83,6 @@ export  namespace TodoStore {
 
                     break;
                 }
-                case 'SEARCH_ITEMS' :
-                {
-                    this.state.searchRequest = payload.text;
-                    this.state.filteredData = this.state.todoData.filter((todo:Todo) => {
-                        if (todo.title.toLowerCase().indexOf(payload.text.toLowerCase()) >= 0) {
-                            return true;
-                        }
-                        return false;
-                    });
-
-                    break;
-                }
             }
 
             this.__emitChange();
