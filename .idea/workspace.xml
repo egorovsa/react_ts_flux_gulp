@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c324907-31e0-410a-b30e-1cdfc9b5ae67" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/app.js" afterPath="$PROJECT_DIR$/dist/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/style.css" afterPath="$PROJECT_DIR$/dist/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styl/todo.styl" afterPath="$PROJECT_DIR$/src/styl/todo.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ts/components/searchInput.tsx" afterPath="$PROJECT_DIR$/src/ts/components/searchInput.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ts/components/todo.tsx" afterPath="$PROJECT_DIR$/src/ts/components/todo.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ts/components/todoitem.tsx" afterPath="$PROJECT_DIR$/src/ts/components/todoitem.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="mytodo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,11 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.styl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todo.styl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styl/todo.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26448363">
+            <state vertical-scroll-proportion="-4.117647">
               <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.018337408">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -97,7 +102,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/ts/stores/todo.ts" />
         <option value="$PROJECT_DIR$/src/ts/actions/todo.ts" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
@@ -106,6 +110,7 @@
         <option value="$PROJECT_DIR$/src/ts/components/searchInput.tsx" />
         <option value="$PROJECT_DIR$/src/ts/components/todoitem.tsx" />
         <option value="$PROJECT_DIR$/src/styl/todo.styl" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -495,13 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.2867647">
@@ -564,8 +562,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styl/todo.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26448363">
+        <state vertical-scroll-proportion="-4.117647">
           <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018337408">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
           <folding />
         </state>
       </provider>
