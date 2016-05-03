@@ -28,13 +28,12 @@ class Actions {
         })
     }
 
-    public searchItems(text:string):void{
+    public updateSearchRequest(text:string):void{
         AppDispatcher.dispatch({
-            actionType:'SEARCH_ITEMS',
+            actionType:'SEARCH_REQUEST',
             text: text
         })
     }
-
 }
 
 export var TodoActions = new Actions(AppDispatcher);

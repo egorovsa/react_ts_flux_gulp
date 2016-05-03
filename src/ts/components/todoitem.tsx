@@ -20,7 +20,8 @@ export class TodoItem extends React.Component<Props, State> {
     }
 
     private itemStatusClass():string {
-        return this.props.item.ended ? 'ended' : '';
+        let classname = 'col-sm-12 todoItem';
+        return this.props.item.ended ? classname+' ended' : classname;
     }
 
     private changeStatus():void {
@@ -30,10 +31,10 @@ export class TodoItem extends React.Component<Props, State> {
     public render() {
         return <li className="list-group-item">
             <div className="row">
-                <div className="col-sm-12 todoItem">
-                    <span className={this.itemStatusClass()}
-                          onClick={this.changeStatus.bind(this)}>{this.props.title}</span>
-                    <button className="btn btn-danger navbar-right" onClick={this.deleteItem.bind(this)}>Удалить
+                <div className={this.itemStatusClass()}   onClick={this.changeStatus.bind(this)}>
+                    <span>{this.props.title}</span>
+                    <button className="btn btn-danger navbar-right" onClick={this.deleteItem.bind(this)}>
+                        DEL
                     </button>
                 </div>
 

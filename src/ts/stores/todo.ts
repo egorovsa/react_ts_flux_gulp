@@ -11,7 +11,6 @@ export  namespace TodoStore {
 
     export interface State {
         todoData: any,
-        filteredData:any,
         searchRequest: string
     }
 
@@ -39,8 +38,7 @@ export  namespace TodoStore {
                     ended: true
                 },
             ],
-            filteredData: [],
-            searchRequest : ''
+            searchRequest: ''
         };
 
         public getState():any {
@@ -64,13 +62,14 @@ export  namespace TodoStore {
                 }
                 case 'NEW_ITEM' :
                 {
-
-                    this.state.todoData.push(
-                        {
-                            id: Date.now(),
-                            title: payload.title
-                        }
-                    );
+                    if (payload.title) {
+                        this.state.todoData.push(
+                            {
+                                id: Date.now(),
+                                title: payload.title
+                            }
+                        );
+                    }
                     break;
                 }
                 case 'CHANGE_STATUS' :
@@ -81,6 +80,11 @@ export  namespace TodoStore {
                         }
                     });
 
+                    break;
+                }
+                case 'SEARCH_REQUEST' :
+                {
+                    this.state.searchRequest = payload.text;
                     break;
                 }
             }

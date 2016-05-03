@@ -44,14 +44,8 @@ function baseHtml() {
         .pipe(browserSync.stream());
 }
 
-function handleTSErrors() {
-    //var args = Array.prototype.slice.call(arguments);
-    //
-    //notify.onError({
-    //    title: "TypeScript Error",
-    //    message: "<%= error.message %>"
-    //}).apply(this, args);
-    console.log('ERROR');
+function handleTSErrors(error) {
+    console.log('ERROR: '+error.message);
     this.emit('end');
 }
 

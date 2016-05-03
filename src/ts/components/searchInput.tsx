@@ -1,65 +1,61 @@
 import * as React from 'react';
-import {Container} from 'flux/utils';
-import {TodoStore} from '../stores/todo';
-import {TodoActions} from '../actions/todo';
 
 interface Props {
-    searchUpdate: any
+    searchUpdate: any,
+    appendNewItem: any
 }
 
 interface State {
-    searchInput:string
+    newItemText:string
 }
 
-class SI extends React.Component<Props, State> {
+export class SearchInput extends React.Component<Props, State> {
+    state:State = {
+        newItemText: ''
+    };
 
-    private newItem:string = '';
+    private appendNew(e:KeyboardEvent):void {
+        e.preventDefault();
 
-
-
-    static getStores() {
-        return [
-            TodoStore.store
-        ];
-    }
-
-    static calculateState() {
-        return {
-            todoStore: TodoStore.store.getState()
-        }
-    }
-
-    private appendNew():void {
-        TodoActions.appendItem(this.newItem);
+        this.props.appendNewItem(this.state.newItemText);
+        this.setState({
+            newItemText:''
+        });
     }
 
     private handleNewItemChange(e):void {
-        this.newItem = e.target.value;
+        this.setState({
+            newItemText:e.target.value
+        })
     }
 
-    private handleSearchChange(e):void{
+    private handleSearchChange(e):void {
         this.props.searchUpdate(e.target.value);
     }
 
     public render() {
         return <div className="row">
             <div className="col-lg-6">
-                <input type="text" className="form-control" placeholder="Search for..." onChange={this.handleSearchChange.bind(this)}/>
+                <input type="text" className="form-control" placeholder="Search for..."
+                       onChange={this.handleSearchChange.bind(this)}/>
             </div>
             <div className="col-lg-6">
-                <div className="input-group">
-                    <input type="text" className="form-control" placeholder="New item here..."
-                           onChange={this.handleNewItemChange.bind(this)}/>
+                <form className="input-group" onSubmit={this.appendNew.bind(this)}>
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="New item here..."
+                        value={this.state.newItemText}
+                        onChange={this.handleNewItemChange.bind(this)}
+                    />
                     <span className="input-group-btn">
-                        <button className="btn btn-default" type="button" onClick={this.appendNew.bind(this)}>
+                        <button className="btn btn-default" type="submit">
                             Go!
                         </button>
                     </span>
-                </div>
+                </form>
             </div>
         </div>
 
     }
 }
-
-export var SearchInput = Container.create(SI);
